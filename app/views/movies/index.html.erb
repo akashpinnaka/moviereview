@@ -1,0 +1,13 @@
+<%= link_to "Add movie", new_movie_path %>
+<div id="movies_index" class="skinny_wrapper">
+  <% @movies.each do |movie| %>
+  <div class="movie_container">
+    <div class="thumbnail">
+      <%= link_to image_tag(movie.thumbnail.url(:medium)), movie_path(movie) %>
+    </div>
+  	<p><%= link_to movie.title, movie_path(movie) %></p>
+    <%= link_to "upvote", upvote_movie_path(movie) %>
+    <%= link_to "downvote", downvote_movie_path(movie) %>
+  </div>
+  <% end %>
+</div>

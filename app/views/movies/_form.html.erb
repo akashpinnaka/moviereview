@@ -1,0 +1,6 @@
+<%= form_for @movie, html: {multipart: true} do |f| %>
+  <%= f.text_field :title, placeholder: "Movie Title" %><br>
+  <%= f.text_area :description, placeholder: "Movie Description" %><br>
+  <%= f.file_field :thumbnail %><br>
+  <%= f.submit "Save movie" %>
+<% end %>
